@@ -52,10 +52,9 @@
     nav a { font-size: 20px; transition: color .15s; }
     nav a:hover, nav a.active { color: var(--accent); }
 
-    .player { margin-top: 34px; width: 100%; max-width: 300px; }
+    .player { margin-top: 28px; width: 100%; max-width: 420px; }
     .player p { font-size: 14px; font-style: italic; color: var(--muted); margin-bottom: 8px; }
     .player iframe { border: 0; border-radius: 12px; width: 100%; display: block; }
-
 
     /* Right column */
     main { padding: 60px 0; }
@@ -63,12 +62,8 @@
     .panel.show { display: block; }
     @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
-    .hero img { width: 100%; max-height: 72vh; object-fit: contain; display: block; }
-    .placeholder {
-      width: 100%; aspect-ratio: 4 / 3; border: 1px dashed #ccc;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--muted); font-style: italic; text-align: center; padding: 20px;
-    }
+
+    .hero img { width: 100%; max-height: 58vh; object-fit: contain; object-position: left; display: block; }
 
     .panel h2 { font-size: 30px; font-weight: 500; margin-bottom: 20px; }
     .panel p { max-width: 560px; }
@@ -105,19 +100,18 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-
-      <div class="player">
-        <p>currently listening to</p>
-        <iframe src="https://open.spotify.com/embed/playlist/2RawdaHZWHXIRaHPm8ibS4?utm_source=generator"
-                height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy" title="Spotify playlist"></iframe>
-      </div>
     </aside>
 
     <main>
       <section class="panel hero" id="panel-home">
-        <img src="hero.jpg" alt="" onerror="this.replaceWith(document.getElementById('ph').content.cloneNode(true))">
-        <template id="ph"><div class="placeholder">Upload an image named hero.jpg to your repo and it will show up here.</div></template>
+        <img src="hero.jpg" alt="">
+
+        <div class="player">
+          <p>currently listening to</p>
+          <iframe src="https://open.spotify.com/embed/playlist/2RawdaHZWHXIRaHPm8ibS4?utm_source=generator"
+                  height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy" title="Spotify playlist"></iframe>
+        </div>
       </section>
 
       <section class="panel" id="panel-about">
@@ -128,7 +122,7 @@
 
       <section class="panel" id="panel-projects">
         <h2>Projects</h2>
-         <p style="color: var(--muted); font-style: italic;">Still working on this, I'll be back soon to add my projects:b</p>
+        <p style="color: var(--muted); font-style: italic;">Still working on this, I'll be back soon to add my projects :p</p>
       </section>
 
       <section class="panel" id="panel-reading">
@@ -138,8 +132,7 @@
 
       <section class="panel contact" id="panel-contact">
         <h2>Contact</h2>
-        <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
-        <p>Email: <a href="mailto:irrgalar@gmail.com">irrgalar@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/irriverag">github.com/irriverag</a></p>
       </section>
     </main>
 
