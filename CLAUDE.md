@@ -1,0 +1,46 @@
+# Isn's personal website
+
+Personal site for Isn, a first-year cybersecurity student at Purdue. Hosted on GitHub Pages from the repo `irriverag/irriverag.github.io`, live at https://irriverag.github.io.
+
+## Stack and structure
+
+- Plain HTML, CSS and a small vanilla JS script, all in **one file: `index.html`**. No framework, no build step, no package manager. Keep it that way unless asked.
+- `hero.jpg` sits next to `index.html` in the repo root. It is the user's own picture. Never delete, rename or replace it.
+- Font: EB Garamond from Google Fonts, falling back to Georgia/serif.
+- Deploys automatically: anything pushed to `main` goes live on GitHub Pages within a minute or so.
+
+## Layout (current, intentional)
+
+- **Left column:** the name "Isn" and a vertical nav, in this order: About, Home, Projects, Reading, Contact. The site still opens on Home by default.
+- **Top right corner:** `hero.jpg`, fixed in place, 200px max on desktop (100px on mobile), visible on every tab.
+- **Bottom middle:** a Spotify playlist embed, fixed in place and visible on every tab. It's drawn at 75% size with `transform: scale(0.75)`, which is why its label font is set larger (18px).
+- **Right column:** the content of the selected tab.
+
+## How the tabs work
+
+Each tab is a `<section class="panel" id="panel-NAME">`. The nav links use hashes (`#about`, `#projects`, and so on), and the `show()` script at the bottom of the file shows the matching panel and gives that nav link the blue `active` color. To add a tab, add a nav `<li>` with `href="#name"` and a matching `<section class="panel" id="panel-name">`.
+
+## Content status
+
+- **About:** written. Interests are networking, beginner scripting, the gym, Overwatch, reading and Pokémon cards.
+- **Projects:** placeholder text ("Still working on this, I'll be back soon to add my projects :p").
+- **Reading:** placeholder text ("also under construction!!").
+- **Contact:** GitHub link only (github.com/irriverag).
+- **Home:** an empty panel. The picture and the player are what show there.
+
+## Decisions to respect
+
+- **No email address anywhere on the site.** The user removed it on purpose to avoid scraping.
+- **No Purdue Hackers webring.** The user is not a member. Don't add it back.
+- **Keep the Spotify playlist ID `2RawdaHZWHXIRaHPm8ibS4`** unless the user gives a new one.
+- **Keep the style minimal:** white background, serif font, the `#4a5bd4` accent. The user doesn't want a terminal or hacker look.
+- **Writing tone:** casual and natural, in first person as Isn. The user found stiff, list-heavy copy awkward.
+
+## Checking changes
+
+Open `index.html` directly in a browser, or run `python3 -m http.server` in this folder and visit http://localhost:8000. Check that:
+
+- every tab opens
+- the picture stays in the top right
+- the player stays at the bottom middle and doesn't cover the text
+- the layout works at phone width (below 820px)
