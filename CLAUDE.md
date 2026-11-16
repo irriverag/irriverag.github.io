@@ -11,9 +11,8 @@ Personal site for Isn, a first-year cybersecurity student at Purdue. Hosted on G
 
 ## Layout (current, intentional)
 
-- **Left column:** the name "Isn" and a vertical nav, in this order: About, Home, Projects, Reading, Contact. The site still opens on Home by default.
+- **Left column:** the name "Isn" and a vertical nav, in this order: About, Home, Projects, Thoughts, Contact. The site opens on About by default.
 - **Top right corner:** `hero.jpg`, fixed in place, 200px max on desktop (100px on mobile), visible on every tab.
-- **Bottom middle:** a Spotify playlist embed, fixed in place and visible on every tab. It's drawn at 75% size with `transform: scale(0.75)`, which is why its label font is set larger (18px).
 - **Right column:** the content of the selected tab.
 
 ## How the tabs work
@@ -24,15 +23,15 @@ Each tab is a `<section class="panel" id="panel-NAME">`. The nav links use hashe
 
 - **About:** written. Interests are networking, beginner scripting, the gym, Overwatch, reading and Pokémon cards.
 - **Projects:** placeholder text ("Still working on this, I'll be back soon to add my projects :p").
-- **Reading:** placeholder text ("also under construction!!").
+- **Thoughts:** (formerly Reading) placeholder text ("also under construction!!").
 - **Contact:** GitHub link only (github.com/irriverag).
-- **Home:** an empty panel. The picture and the player are what show there.
+- **Home:** an empty panel. Only the picture shows there.
 
 ## Decisions to respect
 
 - **No email address anywhere on the site.** The user removed it on purpose to avoid scraping.
 - **No Purdue Hackers webring.** The user is not a member. Don't add it back.
-- **Keep the Spotify playlist ID `2RawdaHZWHXIRaHPm8ibS4`** unless the user gives a new one.
+- **No Spotify embed.** The user removed it on purpose. Don't add it back.
 - **Keep the style minimal:** white background, serif font, the `#4a5bd4` accent. The user doesn't want a terminal or hacker look.
 - **Writing tone:** casual and natural, in first person as Isn. The user found stiff, list-heavy copy awkward.
 
@@ -42,5 +41,4 @@ Open `index.html` directly in a browser, or run `python3 -m http.server` in this
 
 - every tab opens
 - the picture stays in the top right
-- the player stays at the bottom middle and doesn't cover the text
 - the layout works at phone width (below 820px)
