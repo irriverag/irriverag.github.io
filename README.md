@@ -1,5 +1,9 @@
 # irriverag.github.io
 
-My personal website: a minimal, single-page site with About, Projects and Thoughts sections. It's built with plain HTML, CSS and a little JavaScript, uses the Heuristica font (self-hosted, SIL Open Font License), and is hosted on GitHub Pages.
+Personal website I vibecoded because cybersecurity students don't know how to code. Made to show my progress within the degree and personal projects. Might be a small diary at times :)
 
-Live at https://irriverag.github.io
+
+
+
+https://irriverag.github.io
+Link^^
