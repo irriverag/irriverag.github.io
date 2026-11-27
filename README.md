@@ -5,5 +5,4 @@ Personal website I vibecoded because cybersecurity students don't know how to co
 
 
 
-https://irriverag.github.io
-Link^^
+Link: https://irriverag.github.io
