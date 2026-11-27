@@ -27,7 +27,7 @@ Entries inside a tab use `#tab/slug`: add an `<li>` to the tab's `<ul class="ent
 ## Content status
 
 - **About:** the About text and a "Latest update" line below it (`[YYYY-MM-DD] what changed`). Update that line by hand whenever the site changes. About interests are networking, beginner scripting, the gym, Overwatch, reading and Pokémon cards.
-- **Projects:** a list of entries in the form `[Fall 2026] Title`. Each one opens its own page (`#projects/SLUG`) with a ← back link, a meta line, and a body box that stops at 50vh and fades out at the bottom. First entry: Bash Automation Scripts (coursework; the "View on GitHub" link stays commented out until the instructor OKs posting the code). Next planned: a Packet Tracer networking lab.
+- **Projects:** a list of entries in the form `[Fall 2026] Title`. Each one opens its own page (`#projects/SLUG`) with a ← back link, a meta line, and a body box that stops at 50vh and fades out at the bottom. Entries: Lab Network Switcher and Scheduled Backups (two Bash coursework scripts, split from the old "Bash Automation Scripts" entry; Scheduled Backups has a "Problems I ran into" section). Their "View on GitHub" links stay commented out until the instructor OKs posting the code. Next planned: a Packet Tracer networking lab.
 - **Thoughts:** (formerly Reading) blog-style list (`<ul class="entries posts">`: date, title, a line under each), with posts opening at `#thoughts/slug` like projects. No posts yet, so it shows the placeholder ("also under construction!!") and a commented-out template.
 
 ## Decisions to respect

@@ -88,6 +88,8 @@
               mask-image: linear-gradient(to bottom, #000 calc(100% - 60px), transparent);
     }
     .entry-body ul { margin: 10px 0 14px 22px; max-width: 560px; }
+    .entry-body h3 { font-size: 22px; font-weight: 400; margin: 24px 0 8px; }
+    .entry-body code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85em; background: #f3f3f3; padding: 1px 5px; border-radius: 4px; }
     .entry-body li + li { margin-top: 6px; }
     .entry-link a { color: var(--accent); }
     .entry-link a:hover { text-decoration: underline; }
@@ -146,7 +148,7 @@
         <!-- Latest update: replace the date and text below whenever you change the site. -->
         <div class="update">
           <h3>Latest update</h3>
-          <p><span class="when">[2026-11-27]</span> added my first project, <a href="#projects/bash-automation">Bash Automation Scripts</a></p>
+          <p><span class="when">[2026-11-27]</span> added my first project, <a href="#projects">Bash Automation Scripts</a></p>
         </div>
       </section>
 
@@ -156,19 +158,33 @@
         <!-- To add a project: add an <li> here linking to #projects/SLUG,
              then an <article class="entry" id="entry-projects-SLUG"> below in the same format. -->
         <ul class="entries">
-          <li><a href="#projects/bash-automation"><span class="when">[Fall 2026]</span> Bash Automation Scripts</a></li>
+          <li><a href="#projects/lab-network-switcher"><span class="when">[Fall 2026]</span> Lab Network Switcher</a></li>
+          <li><a href="#projects/scheduled-backups"><span class="when">[Fall 2026]</span> Scheduled Backups</a></li>
         </ul>
 
-        <article class="entry" id="entry-projects-bash-automation">
-          <h2><a class="back" href="#projects" aria-label="Back to projects">&larr;</a> Bash Automation Scripts</h2>
-          <p class="meta">Coursework · Fall 2026</p>
+        <article class="entry" id="entry-projects-lab-network-switcher">
+          <h2><a class="back" href="#projects" aria-label="Back to projects">&larr;</a> Lab Network Switcher</h2>
+          <p class="meta">Coursework · Fall 2026 · Bash</p>
           <div class="entry-body">
-            <p>Two small Bash scripts I wrote to automate some repetitive stuff in a lab environment.</p>
-            <ul>
-              <li><strong>Lab network switcher:</strong> drops whatever network I'm on and connects to the right lab network automatically, so I never have to switch it by hand before lab work.</li>
-              <li><strong>Scheduled backups:</strong> waits 5 minutes after startup to let the system settle, then makes a backup every minute.</li>
-            </ul>
-            <p>What I learned: setting up network stuff from the command line, scheduling tasks that repeat, and writing scripts that keep working without me babysitting them.</p>
+            <p>A small Bash script I wrote for lab work. It drops whatever network I'm on and connects to the right lab network automatically, so I never have to switch it by hand before starting a lab.</p>
+            <p>What I learned: how to set up network stuff from the command line instead of clicking through settings, and how nice it is to turn a boring step into one command.</p>
+            <!-- When the code is OK to post, uncomment this and fill in the repo URL:
+            <p class="entry-link"><a href="https://github.com/irriverag/REPO">View on GitHub</a></p>
+            -->
+          </div>
+        </article>
+
+        <article class="entry" id="entry-projects-scheduled-backups">
+          <h2><a class="back" href="#projects" aria-label="Back to projects">&larr;</a> Scheduled Backups</h2>
+          <p class="meta">Coursework · Fall 2026 · Bash</p>
+          <div class="entry-body">
+            <p>Another Bash script from the same lab. It waits 5 minutes after startup to let the system settle, then makes a backup every minute, with a timestamp on each one.</p>
+
+            <h3>Problems I ran into</h3>
+            <p><strong>The timestamps were wrong.</strong> They were supposed to show the seconds, but instead they showed the number of seconds since the Unix epoch. The fix was just capitalizing the S in the script. It was a tiny change, but it made me pay a lot more attention to detail.</p>
+            <p><strong>The service looked dead.</strong> When I ran <code>systemctl status</code> on it, it showed up as <code>inactive (dead)</code> instead of <code>active (exited)</code>. I fixed it by making the script always show up as active.</p>
+
+            <p>What I learned: scheduling tasks that repeat, writing scripts that keep working without me babysitting them, and that one wrong letter can change everything.</p>
             <!-- When the code is OK to post, uncomment this and fill in the repo URL:
             <p class="entry-link"><a href="https://github.com/irriverag/REPO">View on GitHub</a></p>
             -->
