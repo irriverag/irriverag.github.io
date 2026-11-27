@@ -101,6 +101,12 @@
     .entry-link a { color: var(--accent); }
     .entry-link a:hover { text-decoration: underline; }
 
+    .update { margin-top: 40px; }
+    .update h3 { font-size: 22px; font-weight: 500; margin-bottom: 8px; }
+    .update .when { color: var(--muted); }
+    .update a { color: var(--accent); }
+    .update a:hover { text-decoration: underline; }
+
     .contact a { color: var(--accent); }
     .contact a:hover { text-decoration: underline; }
 
@@ -121,7 +127,6 @@
       <a class="name" href="#home">Isn</a>
       <nav>
         <ul>
-          <li><a href="#about">About</a></li>
           <li><a href="#home">Home</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#thoughts">Thoughts</a></li>
@@ -131,12 +136,16 @@
     </aside>
 
     <main>
-      <section class="panel" id="panel-home"></section>
-
-      <section class="panel" id="panel-about">
+      <section class="panel" id="panel-home">
         <h2>About</h2>
         <p>Good Morning! I'm Isn. I'm a first-year cybersecurity student at Purdue, mostly getting into networking right now and picking up some scripting along the way.</p>
         <p>When I'm not doing school stuff, I'm usually at the gym, playing Overwatch, reading, or sleeping tbh.</p>
+
+        <!-- Latest update: replace the date and text below whenever you change the site. -->
+        <div class="update">
+          <h3>Latest update</h3>
+          <p><span class="when">[2026-11-27]</span> added my first project, <a href="#projects/bash-automation">Bash Automation Scripts</a></p>
+        </div>
       </section>
 
       <section class="panel" id="panel-projects">
@@ -180,9 +189,9 @@
 
   <script>
     function show() {
-      var parts = (location.hash || '#about').slice(1).split('/');
+      var parts = (location.hash || '#home').slice(1).split('/');
       var id = parts[0], sub = parts[1];
-      if (!document.getElementById('panel-' + id)) { id = 'about'; sub = null; }
+      if (!document.getElementById('panel-' + id)) { id = 'home'; sub = null; }
       var entry = sub && document.getElementById('entry-' + id + '-' + sub);
 
       document.querySelectorAll('.entry').forEach(function (e) {

@@ -11,7 +11,7 @@ Personal site for Isn, a first-year cybersecurity student at Purdue. Hosted on G
 
 ## Layout (current, intentional)
 
-- **Left column:** the name "Isn" and a vertical nav, in this order: About, Home, Projects, Thoughts, Contact. The site opens on About by default.
+- **Left column:** the name "Isn" and a vertical nav, in this order: Home, Projects, Thoughts, Contact. The site opens on Home by default. There is no separate About tab any more; old `#about` links fall back to Home.
 - **Top right corner:** `hero.jpg`, fixed in place, 200px max on desktop (100px on mobile), visible on every tab.
 - **Right column:** the content of the selected tab.
 
@@ -23,11 +23,10 @@ Entries inside a tab use `#tab/slug`: add an `<li>` to the tab's `<ul class="ent
 
 ## Content status
 
-- **About:** written. Interests are networking, beginner scripting, the gym, Overwatch, reading and Pokémon cards.
+- **Home:** holds the About text (heading "About") and a "Latest update" line below it (`[YYYY-MM-DD] what changed`). Update that line by hand whenever the site changes. About interests are networking, beginner scripting, the gym, Overwatch, reading and Pokémon cards.
 - **Projects:** a list of entries in the form `[Fall 2026] Title`. Each one opens its own page (`#projects/SLUG`) with a ← back link, a meta line, and a body box that stops at 50vh and fades out at the bottom. First entry: Bash Automation Scripts (coursework; the "View on GitHub" link stays commented out until the instructor OKs posting the code). Next planned: a Packet Tracer networking lab.
 - **Thoughts:** (formerly Reading) placeholder text ("also under construction!!").
 - **Contact:** GitHub link only (github.com/irriverag).
-- **Home:** an empty panel. Only the picture shows there.
 
 ## Decisions to respect
 
