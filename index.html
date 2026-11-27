@@ -7,13 +7,11 @@
   <meta name="description" content="Isn, cybersecurity student at Purdue.">
   <link rel="preload" href="fonts/heuristica-regular.woff2" as="font" type="font/woff2" crossorigin>
   <script>
-    // Pick the theme before the page draws: saved choice first, otherwise the system setting.
+    // Pick the theme before the page draws: the visitor's saved choice, otherwise light.
     (function () {
       var t = null;
       try { t = localStorage.getItem('theme'); } catch (e) {}
-      if (t !== 'light' && t !== 'dark') {
-        t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
+      if (t !== 'dark') t = 'light';
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
