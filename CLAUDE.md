@@ -19,10 +19,12 @@ Personal site for Isn, a first-year cybersecurity student at Purdue. Hosted on G
 
 Each tab is a `<section class="panel" id="panel-NAME">`. The nav links use hashes (`#about`, `#projects`, and so on), and the `show()` script at the bottom of the file shows the matching panel and gives that nav link the blue `active` color. To add a tab, add a nav `<li>` with `href="#name"` and a matching `<section class="panel" id="panel-name">`.
 
+Entries inside a tab use `#tab/slug`: add an `<li>` to the tab's `<ul class="entries">` and an `<article class="entry" id="entry-TAB-SLUG">` in the same panel. `show()` hides the list and shows that article.
+
 ## Content status
 
 - **About:** written. Interests are networking, beginner scripting, the gym, Overwatch, reading and Pokémon cards.
-- **Projects:** placeholder text ("Still working on this, I'll be back soon to add my projects :p").
+- **Projects:** a list of entries in the form `[Fall 2026] Title`. Each one opens its own page (`#projects/SLUG`) with a ← back link, a meta line, and a body box that stops at 50vh and fades out at the bottom. First entry: Bash Automation Scripts (coursework; the "View on GitHub" link stays commented out until the instructor OKs posting the code). Next planned: a Packet Tracer networking lab.
 - **Thoughts:** (formerly Reading) placeholder text ("also under construction!!").
 - **Contact:** GitHub link only (github.com/irriverag).
 - **Home:** an empty panel. Only the picture shows there.

@@ -77,6 +77,30 @@
     .list .title a:hover { color: var(--accent); }
     .list .desc { color: var(--muted); font-size: 17px; }
 
+    /* Entry lists (Projects) and single-entry pages */
+    .entries { list-style: none; }
+    .entries li { margin: 6px 0; font-size: 20px; }
+    .entries a { transition: color .15s; }
+    .entries a:hover { color: var(--accent); }
+    .entries .when { color: var(--muted); }
+
+    .entry { display: none; }
+    .panel.open .entries, .panel.open > h2 { display: none; }
+    .entry.show { display: block; animation: fade .35s ease; }
+    .entry h2 { display: flex; align-items: baseline; gap: 12px; }
+    .entry .back { font-size: 22px; transition: color .15s; }
+    .entry .back:hover { color: var(--accent); }
+    .entry .meta { color: var(--muted); margin-bottom: 16px; }
+    .entry-body {
+      max-width: 620px; max-height: 50vh; overflow-y: auto; padding-bottom: 60px;
+      -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 60px), transparent);
+              mask-image: linear-gradient(to bottom, #000 calc(100% - 60px), transparent);
+    }
+    .entry-body ul { margin: 10px 0 14px 22px; max-width: 560px; }
+    .entry-body li + li { margin-top: 6px; }
+    .entry-link a { color: var(--accent); }
+    .entry-link a:hover { text-decoration: underline; }
+
     .contact a { color: var(--accent); }
     .contact a:hover { text-decoration: underline; }
 
@@ -117,7 +141,28 @@
 
       <section class="panel" id="panel-projects">
         <h2>Projects</h2>
-        <p style="color: var(--muted); font-style: italic;">Still working on this, I'll be back soon to add my projects :p</p>
+
+        <!-- To add a project: add an <li> here linking to #projects/SLUG,
+             then an <article class="entry" id="entry-projects-SLUG"> below in the same format. -->
+        <ul class="entries">
+          <li><a href="#projects/bash-automation"><span class="when">[Fall 2026]</span> Bash Automation Scripts</a></li>
+        </ul>
+
+        <article class="entry" id="entry-projects-bash-automation">
+          <h2><a class="back" href="#projects" aria-label="Back to projects">&larr;</a> Bash Automation Scripts</h2>
+          <p class="meta">Coursework · Fall 2026</p>
+          <div class="entry-body">
+            <p>Two small Bash scripts I wrote to automate some repetitive stuff in a lab environment.</p>
+            <ul>
+              <li><strong>Lab network switcher:</strong> drops whatever network I'm on and connects to the right lab network automatically, so I never have to switch it by hand before lab work.</li>
+              <li><strong>Scheduled backups:</strong> waits 5 minutes after startup to let the system settle, then makes a backup every minute.</li>
+            </ul>
+            <p>What I learned: setting up network stuff from the command line, scheduling tasks that repeat, and writing scripts that keep working without me babysitting them.</p>
+            <!-- When the code is OK to post, uncomment this and fill in the repo URL:
+            <p class="entry-link"><a href="https://github.com/irriverag/REPO">View on GitHub</a></p>
+            -->
+          </div>
+        </article>
       </section>
 
       <section class="panel" id="panel-thoughts">
@@ -135,8 +180,17 @@
 
   <script>
     function show() {
-      var id = (location.hash || '#about').slice(1);
-      if (!document.getElementById('panel-' + id)) id = 'about';
+      var parts = (location.hash || '#about').slice(1).split('/');
+      var id = parts[0], sub = parts[1];
+      if (!document.getElementById('panel-' + id)) { id = 'about'; sub = null; }
+      var entry = sub && document.getElementById('entry-' + id + '-' + sub);
+
+      document.querySelectorAll('.entry').forEach(function (e) {
+        e.classList.toggle('show', e === entry);
+      });
+      document.querySelectorAll('.panel').forEach(function (p) {
+        p.classList.toggle('open', !!entry && p.id === 'panel-' + id);
+      });
 
       document.querySelectorAll('.panel').forEach(function (p) {
         p.classList.toggle('show', p.id === 'panel-' + id);
