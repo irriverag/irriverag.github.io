@@ -16,7 +16,8 @@ Loosely modelled on dbmaindex.org's layout, but kept light and minimal.
 - **Top-left header:** `hero.jpg` small (52px, 44px on mobile) with the name "Isn" to its right. The whole thing links to `#about`.
 - **Left column:** a vertical nav, in this order: About, Projects, Thoughts. Under it, GitHub (github.com/irriverag) and LinkedIn (linkedin.com/in/ianriverag) icons. The site opens on About. There is no Home or Contact tab any more; old `#home` and `#contact` links fall back to About.
 - **Right column:** the content of the selected tab.
-- **Phone width (below 820px):** the nav becomes one row with the icons on the right.
+- **Theme button:** after the LinkedIn icon. It shows the mode it switches *to*: a moon in light mode, a sun in dark mode. The first visit follows the system setting; after a click, the choice is saved in `localStorage` (key `theme`). A small script in `<head>` sets `data-theme` on `<html>` before the page draws, so there's no white flash. Dark colours are the `:root[data-theme="dark"]` variables at the top of the CSS.
+- **Phone width (below 820px):** the nav becomes one row with the icons (GitHub, LinkedIn, theme) on the right, slightly smaller. It fits on one row down to 375px wide; narrower phones wrap the icons onto a line under the nav.
 
 ## How the tabs work
 
@@ -35,7 +36,7 @@ Entries inside a tab use `#tab/slug`: add an `<li>` to the tab's `<ul class="ent
 - **No email address anywhere on the site.** The user removed it on purpose to avoid scraping.
 - **No Purdue Hackers webring.** The user is not a member. Don't add it back.
 - **No Spotify embed.** The user removed it on purpose. Don't add it back.
-- **Keep the style minimal:** white background, Heuristica serif font, the `#4a5bd4` accent. The user doesn't want a terminal or hacker look.
+- **Keep the style minimal:** white background (or `#161616` in dark mode), Heuristica serif font, the `#4a5bd4` accent (`#8c9bf2` in dark mode). The user doesn't want a terminal or hacker look.
 - **Writing tone:** casual and natural, in first person as Isn. The user found stiff, list-heavy copy awkward.
 
 ## Checking changes
@@ -45,3 +46,4 @@ Open `index.html` directly in a browser, or run `python3 -m http.server` in this
 - every tab opens
 - the picture and name stay in the top left and link to About
 - the layout works at phone width (below 820px)
+- both themes look right, and the theme button swaps moon/sun
